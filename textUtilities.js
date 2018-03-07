@@ -1,7 +1,12 @@
 var expect = require('chai').expect;
 
 function titleCace(title){
-    return title[0].toUpperCase() + title.substring(1);
+    var words = title.split(' ');
+    var titleCaseWords = words.map(function(word) {
+        return word[0].toUpperCase() + word.substring(1);
+    });
+    return titleCaseWords.join(' ');
+    
 }
 
 expect(titleCace('the great mouse detective')).to.be.a('string');
